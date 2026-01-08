@@ -1,18 +1,24 @@
 body {
-    background-color: #ede9e1;
+  background-color: #ede9e1;
+  font-family: "Rubik", sans-serif;
+  padding: auto;
 }
 h1 {
-    color: #31302c;
-font-size: 50px;}
+  color: #31302c;
+  font-size: 50px;
+  text-align: center;
+}
 h2 {
-    color: #31302c;
-font-size: 35px;}
+  color: #31302c;
+  font-size: 35px;
+  text-align: center;
+}
 h3 {
-    color: #31302c;
-font-size: 20px;}
+  color: #31302c;
+  font-size: 20px;
+  text-align: center;
+}
 p {
-    color: #31302c;
-font-size: 16px;}
-body {
-    font-family: "Rubik", sans-serif;
+  color: #31302c;
+  font-size: 16px;
 }
