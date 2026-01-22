@@ -4,11 +4,9 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet"
     />
     <title>Home</title>
   </head>
@@ -17,10 +15,9 @@
     <nav>
       <div class="logo">
         <a href="index.html">
-        <img src="images/clown logo.svg" alt="clogo"/></a>
+        <img src="images/clown logo v3.svg" alt="Home button appears as a small cartoon clown head"/></a>
       </div>
       <ul class="nav-links">
-        <li><a href="index.html"class="active">Home</a></li>
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/lab2.html">Lab 2</a></li>
         <li><a href="pages/uncertainties.html">Uncertainties</a></li>
@@ -29,15 +26,61 @@
   </header>
 
   <main>
-    <h1>Winter's Wintabulous MSC2006 Site</h1> <br>
-    <h2>Read this site to see my grand schemes and plots</h2> <br>
-    <h3>you are NOT ready for this</h3><br>
-    <p>
-      This is my clown landing page. I like to call it "Clown City", but the clowns are not a fan
-    </p>
+    <section class="hero">
+    <h1>Winter's Wintabulous Web Dev</h1>
+    <p>Documenting my circus journey, one clown at a time.</p>
+    <p style="background-image: url(images/vintage_paper.jpeg);"></p>
+  </section>
+
+  <section class="gallery">
+    <h2>My Entries</h2>
+    
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <a href="pages/lab2.html">
+          <img src="images/pierrot_1.jpg" alt="Cézanne's painting of two clowns. One is wearing all white, and one is in a parquet-patterned suit.">
+          <div class="gallery-overlay">
+            <h3>Lab 2</h3>
+            <p>15/Jan/2026</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/pierrot_2.jpg" alt="Coming soon">
+        <div class="gallery-overlay">
+          <h3>Coming Soon</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+
+  <div class="gallery-item">
+        <img src="images/pierrot_3.jpg" alt="Coming soon">
+        <div class="gallery-overlay">
+          <h3>Coming Soon</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+
+  <div class="gallery-item">
+        <img src="images/pierrot_4.jpg" alt="Coming soon">
+        <div class="gallery-overlay">
+          <h3>Coming Soon</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+  <br>
+  <br>
+  <div class="clown-pic">
     <img src="images/clown.jpg" alt="A clown looking beleaguered at a desk" />
     <br>
     <a href="https://www.justforclowns.com/">Help for Clowns</a>
+  </div>
     <!-- <div class="card">Freak city!</div> -->
   </main>
     

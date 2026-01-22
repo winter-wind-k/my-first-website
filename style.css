@@ -1,6 +1,6 @@
 body {
   background-color: #e44424;
-  font-family: "Rubik", sans-serif;
+  font-family: "Forum", serif;
   padding: auto;
   line-height: 1.6;
   min-height: 100vh;
@@ -10,27 +10,28 @@ body {
 }
 h1 {
   color: #fffefb;
-  font-family: "Rubik", sans-serif;
+  font-family: "Forum", serif;
   font-size: 50px;
   text-align: center;
 }
 h2 {
   color: #fffefb;
-  font-family: "Rubik", sans-serif;
+  font-family: "Forum", serif;
   font-size: 35px;
   text-align: center;
 }
 h3 {
   color: #fffefb;
-  font-family: "Rubik", sans-serif;
+  font-family: "Forum", serif;
   font-size: 20px;
   text-align: center;
 }
 p {
   color: #fffefb;
-  font-family: "Rubik", sans-serif;
-  font-size: 16px;
+  font-family: "Forum", serif;
+  font-size: 20px;
 }
+
 /* Reset default styles */
 * {
   margin: 0;
@@ -58,9 +59,9 @@ nav {
 /* Logo Styling */
 .logo img{
   z-index: 1000;
-  height: 30%;
-  width: 30%;
-  max-width: 20vw;
+  height: 200%;
+  width: 200%;
+  max-width: 27vw;
   transition: transform 0.3s ease;
   transform-origin: center;
 }
@@ -80,8 +81,8 @@ nav {
 .nav-links a {
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 1.1rem;
-  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  font-family: "Forum", serif;
   padding-bottom: 0.25rem;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
@@ -119,7 +120,7 @@ li {
   }
   
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
   
 }
@@ -170,6 +171,7 @@ footer {
   color: #ecf0f1;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .footer-section p {
@@ -251,4 +253,272 @@ main {
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
+}
+
+
+/* Gallery Section */
+.gallery {
+  margin-top: 4rem;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #ecf0f1;
+}
+
+/* CSS Grid Layout - 2 Column Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.gallery-item p {
+text-align: center;
+margin: 1rem; 
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery-item img {
+    height: 250px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery-grid {
+    gap: 1.5rem;
+  }
+}
+
+.hero {
+  text-align: center;
+}
+
+.clown-pic img{
+  display: block;
+  margin: 0 auto;
+}
+
+.clown-pic a{
+  display: block;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  /* background-image: url(my-first-website/images/vintage_paper.jpeg); */
+  background: #0d0d0d;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.gallery-overlay h3 {
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+/* Lab Page Styling */
+.lab-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  background: white;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.lab-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.lab-date {
+  font-size: 1.1rem;
+  color: #0d0d0d;
+  font-style: italic;
+}
+
+.lab-content {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.learning-section {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-section h3 {
+  color: #0d0d0d;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.learning-section ul {
+  margin-left: 2rem;
+  line-height: 1.8;
+}
+
+.learning-section li {
+  margin-bottom: 0.5rem;
+  color: #0d0d0d;
+}
+
+.lab-header h1{
+  color:#0d0d0d;
+}
+
+.learning-section p{
+  color: #0d0d0d;
+}
+
+/* Screenshot Gallery */
+.lab-images {
+  margin-bottom: 4rem;
+}
+
+.lab-images h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.screenshot-grid figure {
+  margin: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-grid figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-grid figcaption {
+  padding: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  background-color: #f8f9fa;
+}
+
+/* Reflection Section */
+.lab-reflection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  border-left: 4px solid #0d0d0d;
+}
+
+.lab-reflection h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.lab-reflection p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.lab-reflection p:last-child {
+  margin-bottom: 0;
 }
