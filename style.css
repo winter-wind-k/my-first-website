@@ -406,6 +406,7 @@ margin: 1rem;
   max-height: 500px;
   display: block;
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 .lab-header h1 {
@@ -431,7 +432,7 @@ margin: 1rem;
 } */
 
 .learning-section {
-  background-color: rgba(243, 235, 214, 0.8);
+  background-color: #e7d8ae;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 8px;
@@ -515,6 +516,7 @@ margin: 1rem;
 .lab-reflection {
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 5rem;
   padding: 2rem;
   background-color: #ecf0f1;
   border-radius: 8px;
