@@ -129,14 +129,23 @@ li {
 @media (max-width: 768px) {
   nav {
     margin: 0;
+    padding: 0;
   }
   
   .nav-links {
-    gap: 1rem;
+    gap: 0.3rem;
   }
   
   .nav-links a {
     font-size: 0.8rem;
+  }
+
+  header {
+    padding: 0.4rem;
+  }
+
+  .logo img {
+  max-width: 33vw;
   }
   
 }
@@ -229,24 +238,6 @@ footer {
   color: #606060;
 }
 
-/* Main Content Styling */
-main {
-  max-width: 100vw;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: calc(100vh - 350px);
-}
-
-/* Ensures content doesn't touch edges on small screens */
-@media (max-width: 768px) {
-  main {
-    padding: 1.5rem 1rem;
-  }
-  img {
-    max-width: 90%;
-  }
-}
-
 /* Responsive Footer */
 @media (max-width: 768px) {
   .footer-content {
@@ -273,6 +264,26 @@ main {
   }
 }
 
+/* Main Content Styling */
+main {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 350px);
+}
+
+/* Ensures content doesn't touch edges on small screens */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+  img {
+    max-width: 90%;
+  }
+}
+
+
+
 /*  HTML Setup */
 html {
   scroll-behavior: smooth;
@@ -290,7 +301,7 @@ main {
 
 /* Gallery Section */
 .gallery {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .gallery h2{
@@ -333,6 +344,7 @@ main {
   height: 300px;
   object-fit: cover;
   display: block;
+  margin: 0 auto;
 }
 
 .gallery-item a {
@@ -348,9 +360,14 @@ margin: 1rem;
 
 /* Responsive Gallery */
 @media (max-width: 768px) {
+  .gallery h2 {
+    font-size: var(--main-font-size);
+  }
+  
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-height: 10%;
   }
   
   .gallery h2 {
@@ -358,13 +375,22 @@ margin: 1rem;
   }
   
   .gallery-item img {
-    height: 250px;
+    max-height: 150px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: var(--main-font-size);
+    color: var(--main-font-colour);
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .gallery-grid {
     gap: 1.5rem;
+  }
+
+  .gallery-item img {
+    max-height: 30%;
   }
 }
 
@@ -445,8 +471,6 @@ margin: 1rem;
 }
 
 .lab-header-gif img{
-  /* max-width: 400px;
-  max-height: 500px; */
   max-width: 30%;
   display: block;
   margin: 0 auto;
@@ -708,9 +732,9 @@ margin: 1rem;
   column-gap: 3%;
 }
 
-.about-section{
+.about-section {
   background-color: #e7d8ae;
-  padding: 1rem;
+  padding: 2rem;
   margin: 16px auto;
   border: var(--border-style);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -725,6 +749,7 @@ margin: 1rem;
 .about-section li {
   margin: 0.5rem;
   color: #0d0d0d;
+  font-size: var(--main-font-size);
 }
 
 .learning-section img{
@@ -784,4 +809,37 @@ margin: 1rem;
   .tech-experiment-pic img{
     width: 60%;
   }
+}
+
+/* Project Diary styling */
+.diary-title {
+  background-color: #e7d8ae;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  column-gap: 16px;
+  border: var(--border-style);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* .diary-title h2 {
+  color: #0d0d0d;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+} */
+
+/* .learning-section ul {
+  margin-left: 2rem;
+  line-height: 1.8;
+}
+
+.learning-section li {
+  margin-bottom: 0.5rem;
+  color: #0d0d0d;
+} */
+
+.diary-title p{
+  padding: 1rem;
+  text-align: center;
 }
