@@ -5,7 +5,7 @@
   --main-line-height: 1.4;
   --small-line-height: 1.2;
   --off-white: #e7d8ae;
-  -red: #e44424;
+  --red: #e44424;
   --border-style: double, 5px, #0d0d0d;
 }
 
@@ -37,9 +37,15 @@ h3 {
   font-size: 20px;
   text-align: center;
 }
+
 p {
   color: (--main-font-colour);
   font-family: "Forum", serif;
+  font-size: 20px;
+}
+
+li {
+  font-family: "forum", serif;
   font-size: 20px;
 }
 
@@ -270,7 +276,15 @@ main {
   margin: 0 auto;
   padding: 2rem;
   min-height: calc(100vh - 350px);
+  flex: 1;
 }
+
+/*  HTML Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Make main content grow to push footer down */
 
 /* Ensures content doesn't touch edges on small screens */
 @media (max-width: 768px) {
@@ -281,23 +295,6 @@ main {
     max-width: 90%;
   }
 }
-
-
-
-/*  HTML Setup */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Make main content grow to push footer down */
-main {
-  flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-}
-
 
 /* Gallery Section */
 .gallery {
@@ -384,7 +381,7 @@ margin: 1rem;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .gallery-grid {
     gap: 1.5rem;
   }
@@ -474,26 +471,22 @@ margin: 1rem;
   max-width: 30%;
   display: block;
   margin: 0 auto;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   padding-top: 2rem;
 }
-
-/* .lab-header-gif {
-  border-top-style: solid;
-  border-top-color:#0d0d0d;
-  border-top-width:1px;
-} */
 
 @media (max-width: 768px){
   .lab-header-gif img{
     max-width: 50%;
-    /* margin-bottom: 0rem; */
   }
   
   .learning-section {
     width: 100%;
     margin:0 auto;
     padding: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .learning-section p{
@@ -507,7 +500,7 @@ margin: 1rem;
   }
 
   .learning-section img{
-    width:90%;
+    width:100%;
   }
 }
 
@@ -523,8 +516,11 @@ margin: 1rem;
   column-gap: 16px;
   border: var(--border-style);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 70%;
   margin: 0 auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .learning-section h2 {
@@ -535,14 +531,26 @@ margin: 1rem;
 
 .learning-section ul {
   margin-left: 2rem;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .learning-section li {
   margin-bottom: 0.5rem;
+  font-size: var(--main-font-size);
+  font: var(--main-font-colour);
   color: #0d0d0d;
+  font-family: "forum", serif;
 }
 
+@media (max-width: 768px){
+  .learning-section li{
+    font-size: var(--small-font-size);
+  }
+
+  .learning-section {
+    width: 100%;
+  }
+}
 .learning-section p{
   color: #0d0d0d;
 }
@@ -559,7 +567,7 @@ margin: 1rem;
   border: var(--border-style);
   margin: 2rem auto;
   padding: 0.75rem;
-  max-width: 900px;
+  width: 70%;
 }
 
 .lab-title h2{
@@ -570,12 +578,13 @@ margin: 1rem;
   border: var(--border-style);
   margin: 16px auto;
   padding: 0.75rem;
+  width: 70%;
 }
 
 .screenshot-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 0.8rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -586,6 +595,7 @@ margin: 1rem;
   border: var(--border-style);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .screenshot-grid figure:hover {
@@ -606,6 +616,7 @@ margin: 1rem;
   font-style: italic;
   color: #555;
   background-color: var(--off-white);
+  font-family: "Forum", serif;
 }
 
 /* Reflection Section */
@@ -645,6 +656,8 @@ margin: 1rem;
   flex-direction:row;
   justify-content: space-between;
   margin: 1rem auto;
+  width: 80%;
+  align-items: center;
 }
 
 .lab-gallery {
@@ -680,6 +693,16 @@ margin: 1rem;
   grid-row: span 2;
 }
 
+.lab-2-entry {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  margin: 0 auto;
+  column-gap: 3%;
+  width: 70%;
+
+}
+
 @media (max-width: 768px) {
   .lab-gallery {
     --num-cols: 2;
@@ -691,6 +714,11 @@ margin: 1rem;
   display: flex;
   flex-direction:column;
   justify-content: space-between;
+  column-gap: 3%;
+  row-gap: 3%;
+  padding: 3%;
+  width: 100%;
+  align-items: center;
   }
 
   .clown-gif img{
@@ -708,28 +736,32 @@ margin: 1rem;
   }
 
   .lab-gallery-title h2 {
-     font-size: var(--main-font-size);
-    line-height: var(--main-line-height);
+    font-size: var(--main-font-size);
+    margin: 0.5rem auto;
+    width: 90%;
   }
 
   .lab-title h2{
     font-size: var(--main-font-size);
+    width: 100%;
   }
 
   .lab-2-entry {
   display: flex;
-  flex-direction:row;
-  row-gap: 10%;
-  column-gap: 10%;
-  }
-}
-
-.lab-2-entry {
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-  column-count: 1;
+  flex-direction:column;
+  justify-content: center;
   column-gap: 3%;
+  width: 100%;
+  }
+
+  .screenshot-grid {
+    width: 80%;
+  }
+
+  .screenshot-grid figure{
+    width: 100%;
+    object-fit: fill;
+  }
 }
 
 .about-section {
@@ -768,6 +800,7 @@ margin: 1rem;
 .lab-3-pic figcaption {
   text-align: center;
   font-style: italic;
+  font-family: "Forum", serif;
   color: #555;
   background-color: var(--off-white);
   border: var(--border-style);
@@ -784,7 +817,7 @@ margin: 1rem;
   line-height: var(--main-line-height);
 }
 
-.lab-3-pic p {
+.lab-3-pic p{
   color: #0d0d0d;
   margin-bottom: 0.5rem;
   line-height: var(--main-line-height);
@@ -823,23 +856,145 @@ margin: 1rem;
   margin: 0 auto;
 }
 
-/* .diary-title h2 {
-  color: #0d0d0d;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-} */
-
-/* .learning-section ul {
-  margin-left: 2rem;
-  line-height: 1.8;
-}
-
-.learning-section li {
-  margin-bottom: 0.5rem;
-  color: #0d0d0d;
-} */
-
 .diary-title p{
   padding: 1rem;
   text-align: center;
+}
+
+/* Scrollytelling lab styling: */
+/* Basic reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+}
+
+/* Main 2-column layout */
+.scrolly-container {
+display: flex;
+min-height: 100vh;
+}
+
+/* Left side (visual stage) */
+.visual-column {
+position: fixed;
+left: 0;
+top: 0;
+width: 50%;
+height: 100vh;
+background: white;
+padding: 24px;
+}
+
+/* Right side (story) */
+.text-column {
+margin-left: 50%;
+width: 50%;
+padding: 24px;
+background: #f3f3f3;
+}
+
+.visual-stack {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+/* Each visual sits on top of each other */
+.visual {
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 0.7s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* The active one shows */
+.visual.active {
+opacity: 1;
+}
+
+.visual img {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+}
+
+.story-step {
+min-height: 90vh;
+padding: 5rem 2rem;
+}
+
+.story-step h2 {
+font-size: 32px;
+margin-bottom: 16px;
+}
+
+.story-step p {
+font-size: 18px;
+margin-bottom: 12px;
+}
+
+.spacer {
+height: 20vh;
+}
+
+/* Makes image container a positioning reference */
+.image-stage {
+position: relative;
+display: inline-block;
+}
+
+/* Ensure main image behaves predictably */
+.main-image {
+display: block;
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+}
+
+/* Hotspot container sits on top of image */
+.hotspot {
+position: absolute;
+/* MOVE THESE VALUES TO POSITION HOTSPOT */
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+cursor: pointer;
+z-index: 5;
+}
+
+/* Size of hotspot icon */
+.hotspot-icon {
+width: 36px;
+height: 36px;
+display: block;
+}
+
+/* Label styling */
+.hotspot-label {
+position: absolute;
+left: 120%; /* places it to the right of icon */
+top: 50%;
+transform: translateY(-50%);
+width: 220px;
+padding: 10px 12px;
+background: rgba(255, 255, 255, 0.95);
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+font-size: 14px;
+line-height: 1.4;
+opacity: 0;
+pointer-events: none; /* prevents flicker */
+transition: opacity 0.25s ease;
+}
+/* THE MAGIC: reveal on hover */
+.hotspot:hover .hotspot-label {
+opacity: 1;
 }
