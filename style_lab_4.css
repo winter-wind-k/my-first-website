@@ -1,86 +1,182 @@
-/* Basic reset 
-html {
-  scroll-behavior: smooth;
-}
-*/
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+/* Basic reset */
+:root {
+  --main-font-colour: #0d0d0d;
+  --main-font-size: 20px;
+  --small-font-size: 16px;
+  --main-line-height: 1.4;
+  --small-line-height: 1.2;
+  --off-white: #e7d8ae;
+  --red: #e44424;
+  --border-style: double, 5px, #0d0d0d;
 }
 
 body {
-font-family: Arial, sans-serif;
+  font-family: "Forum", serif;
+  padding: auto;
+  line-height: var(--main-line-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+h1 {
+  color: var(--main-font-colour);
+  font-family: "Forum", serif;
+  font-size: 50px;
+  text-align: center;
+}
+h2 {
+  color: var(--main-font-colour);
+  font-family: "Forum", serif;
+  font-size: 35px;
+  text-align: center;
+}
+h3 {
+  color: var(--main-font-colour);
+  font-family: "Forum", serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+p {
+  color: (--main-font-colour);
+  font-family: "Forum", serif;
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "forum";
 }
 
 /* Main 2-column layout */
 .scrolly-container {
-display: flex;
-min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vh;
 }
 
 /* Left side (visual stage) */
 .visual-column {
-position: fixed;
-left: 0;
-top: 0;
-width: 50%;
-height: 100vh;
-background: white;
-padding: 24px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: white;
+  padding: 24px;
 }
 
 /* Right side (story) */
 .text-column {
-margin-left:50%;
-width: 50%;
-padding: 24px;
-background: #f3f3f3;
+  margin-left:50%;
+  width: 50%;
+  padding: 5rem;
+  background: #f3f3f3;
 }
 
 .visual-stack {
-position: relative;
-width: 100%;
-height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Each visual sits on top of each other */
 .visual {
-position: absolute;
-inset: 0;
-opacity: 0;
-transition: opacity 0.7s ease;
-display: flex;
-align-items: center;
-justify-content: center;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* The active one shows */
 .visual.active {
-opacity: 1;
+  opacity: 1;
 }
 
 .visual img {
-max-width: 90%;
-max-height: 90%;
-object-fit: contain;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 .story-step {
-min-height: 90vh;
-padding: 40px 0;
+  min-height: 90vh;
+  padding: 40px 0;
 }
 
 .story-step h2 {
-font-size: 32px;
-margin-bottom: 16px;
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 .story-step p {
-font-size: 18px;
-margin-bottom: 12px;
+  font-size: 18px;
+  margin-bottom: 12px;
 }
 
 .spacer {
-height: 20vh;
+  height: 20vh;
+}
+
+/* Makes image container a positioning reference */
+.image-stage {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ensure main image behaves predictably */
+.main-image {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Hotspot container sits on top of image */
+.hotspot {
+  position: absolute;
+  /* MOVE THESE VALUES TO POSITION HOTSPOT */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Size of hotspot icon */
+.hotspot-icon {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* Label styling */
+.hotspot-label {
+  position: absolute;
+  left: 120%; /* places it to the right of icon */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none; /* prevents flicker */
+  transition: opacity 0.25s ease;
+}
+/* THE MAGIC: reveal on hover */
+.hotspot:hover .hotspot-label {
+  opacity: 1;
 }
